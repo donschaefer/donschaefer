@@ -121,7 +121,8 @@ const Gallery = () => {
 												>
 													<Typography
 														sx={{ 
-															color: theme.palette.grey[900]
+															color: theme.palette.grey[900],
+															textTransform: `none`
 														}}
 													>
 														{`"${media.title}"`}
