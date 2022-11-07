@@ -1,0 +1,38 @@
+$white: #fff; // common.white
+$lighter: #e0e0e0; // grey[300]
+$light: #bdbdbd; // grey[400]
+$dark: #212121; // grey[900]
+$darker: #121212;
+$black: #000; // common.black
+$primary: #e65100;
+$primaryLight: #ff833a;
+$primaryDark: #ac1900;
+$secondary: #0095e6;
+$secondaryLight: #63c5ff;
+$secondaryDark: #0068b3;
+
+$xs: 0;
+$sm: 600;
+$md: 900;
+$lg: 1200;
+$xl: 1536;
+
+:export {
+	white: $white;
+	lighter: $lighter;
+	light: $light;
+	dark: $dark;
+	darker: $darker;
+	black: $black;
+	primary: $primary;
+	primaryLight: $primaryLight;
+	primaryDark: $primaryDark;
+	secondary: $secondary;
+	secondaryLight: $secondaryLight;
+	secondaryDark: $secondaryDark;	
+	xs: $xs;
+	sm: $sm;
+	md: $md;
+	lg: $lg;
+	xl: $xl;
+}

@@ -1,0 +1,47 @@
+@use './variables.module.scss' as variable;
+@use './mixins.module.scss' as mixin;
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: "Goodtimes", sans-serif;
+}
+
+main {
+	width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+a {
+	color: variable.$primary;
+	text-decoration: none !important;
+	transition: 1s ease all;
+	&:hover {
+		color: variable.$primaryLight
+	}
+}
+
+@include mixin.keyframes(zoomIn) {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.15);
+	}
+}
+
+.hero-container-bkg {
+	@include mixin.animate(zoomIn, 10s, ease-in-out, 0s, 1, forwards);
+}
+
+.clickable-tool-tip,
+.clickable-tool-tip > div {
+	transition: 0s !important;
+}

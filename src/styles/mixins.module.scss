@@ -1,0 +1,17 @@
+@mixin animate($animationName, $duration: 3s, $easeMethod: ease-in-out, $delay: 0, $times: 1, $direction: forwards) {
+	-webkit-animation: $animationName $duration $easeMethod $delay $times $direction;
+	-moz-animation: $animationName $duration $easeMethod $delay $times $direction;
+	animation: $animationName $duration $easeMethod $delay $times $direction;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}

@@ -1,0 +1,6 @@
+@font-face{
+	font-family: 'Goodtime';
+	src: url("./goodtime-webfont.woff") format("woff"),
+		url("./goodtime-webfont.ttf") format("truetype"),
+		url("./goodtime-webfont.eot") format("eot");
+}

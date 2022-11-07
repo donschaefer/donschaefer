@@ -1,0 +1,242 @@
+{
+	"casestudies": [
+		{
+			"id": "1",
+			"client": "Manufacturing Company",
+			"clientUrl": "NDA",
+			"agency": "Netrix Global",
+			"agencyUrl": "https://www.netrixglobal.com",
+			"backgroundUrl": "../media/images/raster/photography/photography_008.jpg",
+			"goal": "Provide employees with a internal application that would enable them to take an incoming custom manufacturing request & run cost projections on the creation, shipping and production life cycle of the product over the course of 10-15 years based on a wide range of potential variables.",
+			"tags": [
+				"React", "TypeScript", "SCSS", "Microsoft Fabric", "C#", "F#", ".NET", "SignalR", "CosmosDb", "SQL", "Azure Hosting", "Adobe XD", "Agile", "UX Testing", "HTML5", "CSS3", "Azure DevOps", "CI/CD", "Authentication", "Authorization"
+			],
+			"contributions": [
+				{
+					"summary": "UI design & development on a global data scale",
+					"description": "With offices and staff all around the world needing to both enter, review & manipulate data, as well as collaborate with co-workers in different countries in real time, the client relied on our ability to innovate unique solutions and ensure they performed well under heavy usage."
+				},{
+					"summary": "Architect a custom table component for data comparisons",
+					"description": "Using the same building blocks as Microsoft Fabric's \"DetailList\" component for a starting point, I was able to create a custom component that offered sticky header & footer rows, as well as fixed left-side columns, infinite row nesting, column/row highlighting, and tabs that enabled the user to change the columns on the right side."
+				},{
+					"summary": "Assist UX team with wireframes, mockups & testing",
+					"description": "Leveraged Adobe XD and the design system our designers had already put together to create wireframes and mockups for new screens that the client needed help visualizing. Also assisted the UX Team lead on a couple of occassions with user testing, script writing and note taking."
+				},{
+					"summary": "Develop intuitive & consistent UI",
+					"description": "Developed entirely new UI flows as well as made enhancements and changes to existing screens while ensuring a consistent & intuitive user experience."
+				},{
+					"summary": "Foster a collaborative, full stack team mentality",
+					"description": "Regularly mentored other developers on the team in regards to UI matters, worked directly with client to brainstorm UI solutions on multiple occassions & sought to help wherever I could with back-end code when opportunities presented themselves."
+				},{
+					"summary": "AGILE delivery",
+					"description": "Worked with a cross-functional Agile team of 5-10 developers over the course of 2 years to consistently design, build out and expand upon software functionality that met or exceeded client expectations in regular 2-week intervals, at times, in parallel with UX sprints that were informing our decisions. Participated in daily standup meetings, as well as meetings for gathering requirements, estimating new work, demoing completed work & retrospectives."
+				}
+			]
+		},
+		{
+			"id": "2",
+			"client": "Healthcare Company",
+			"clientUrl": "NDA",
+			"agency": "Netrix Global",
+			"agencyUrl": "https://www.netrixglobal.com",
+			"backgroundUrl": "../media/images/raster/photography/photography_003.jpg",
+			"goal": "Provide employees with a internal application that would enable them to make updates to inventory and patient test result data",
+			"tags": [
+				"React", "TypeScript", "Microsoft Fabric", "C#", ".NET", "SQL", "Azure Hosting", "Agile", "HTML5", "CSS3", "Azure DevOps", "CI/CD", "Authentication", "Authorization"
+			],
+			"contributions": [
+				{
+					"summary": "Develop a scanner-friendly UI for rapid data entry",
+					"description": "In order to facilitate inventory tracking data entry, sometimes with multiple users scanning data at the same time for the same section of inventory, the client needed a UI that was both capable of rapid data intake."
+				},{
+					"summary": "Conceptualize, communicate & deliver ui solutions without designs",
+					"description": "Over the course of the roughly 2 years that I worked on this project, I frequently brainstormed with both the client and the development team to figure out how best to solve the UI challenges that arose and was able to communicate and deliver my ideas without the use of visuals."
+				},{
+					"summary": "Develop intuitive & consistent UI",
+					"description": "Developed entirely new UI flows as well as made enhancements and changes to existing screens while ensuring a consistent & intuitive user experience."
+				},{
+					"summary": "AGILE delivery",
+					"description": "Worked with a cross-functional Agile team of 5-10 developers over the course of 2 years to consistently design, build out and expand upon software functionality that met or exceeded client expectations in regular 2-week intervals. Participated in daily standup meetings, as well as meetings for gathering requirements, estimating work & demoing completed work."
+				},{
+					"summary": "Full stack development",
+					"description": "While the development team did have developers specifically focused on backend development and database architecture, the team was a cross-functional one & I frequently made updates to server APIs as well as C# & SQL code when it made sense to do so during the course of my work."
+				}
+			]
+		},		
+		{
+			"id": "3",
+			"client": "Legal Firm",
+			"clientUrl": "NDA",
+			"agency": "Netrix Global",
+			"agencyUrl": "https://www.netrixglobal.com",
+			"backgroundUrl": "../media/images/raster/photography/photography_011.jpg",
+			"goal": "Create a portal site for users to consume industry news and related powerbi reports.",
+			"tags": [
+				"React", "Authentication", "PowerBI", "Azure DevOps", "CI/CD", "Azure Hosting"
+			],
+			"contributions": [
+				{
+					"summary": "Architect a UI that dynamically generates itself",
+					"description": "Leveraged Azure's cloud storage capabilities as a low-cost alternative to a traditional CMS (since the intent was to build out a custom CMS at a later stage of application development anyway) and architected a React-based UI that generated it's navigation and site content based on the files it found in the client's azure storage account."
+				},{
+					"summary": "Conceptualize, communicate & deliver ui solutions without designs",
+					"description": "I frequently brainstormed with both the client and the development team to figure out how best to solve the UI challenges that arose and was able to communicate and deliver my ideas without the use of visuals."
+				},{
+					"summary": "Develop intuitive & consistent UI",
+					"description": "Developed entirely new UI flows while ensuring a consistent & intuitive user experience."
+				},{
+					"summary": "AGILE delivery",
+					"description": "Worked with a cross-functional Agile team of 2-3 developers to consistently design, build out and expand upon software functionality that met or exceeded client expectations in regular 2-week intervals. Participated in daily standup meetings, as well as meetings for gathering requirements, estimating work & demoing completed work."
+				}
+			]
+		},
+		{
+			"id": "4",
+			"client": "Adlai Stevenson High School",
+			"clientUrl": "https://www.d125.org/",
+			"agency": "Netrix Global",
+			"agencyUrl": "https://www.netrixglobal.com",
+			"backgroundUrl": "../media/images/raster/photography/photography_024.jpg",
+			"goal": "Integrate new workflows into an existing custom application that enable teachers to enroll students in targeted tutoring sessions and allow teachers, tutors, students and parents to monitor the progress of those sessions.",
+			"tags": [
+				"HTML5", "CSS3", "React", "TypeScript", "React Hooks", "SQL", "C#", ".NET", "Agile", "Authentication", "Authorization", "CI/CD"
+			],
+			"contributions": [
+				{
+					"summary": "Deliver high-quality results under tight deadlines with minimal ramp-up",
+					"description": "With roughly a month to go before several of these new worfklows were launched and the front end developer needing to step away from the project for a couple of weeks, I was able to ramp-up on the project quickly, immediately begin tackling a number of individual tasks, and build out the bulk of the functionality on a new screen for populating, paginating and sorting student data in different ways. At the end of the 2-week period, both the client and development team were extremely pleased with my contributions and kept me on for additional pre & post launch development efforts."
+				},{
+					"summary": "Develop intuitive & consistent UI",
+					"description": "Developed entirely new UI flows as well as made enhancements and changes to existing screens while ensuring a consistent & intuitive user experience."
+				},{
+					"summary": "Full stack development",
+					"description": "While the development team did have developers specifically focused on backend development and database architecture, the team was a cross-functional one & I frequently made updates to server APIs as well as C# & SQL code when it made sense to do so during the course of my work."
+				},{
+					"summary": "AGILE delivery",
+					"description": "Consistently designed, built out and expanded upon software functionality that met or exceeded client expectations in regular 2-week intervals. Participated in daily standup meetings, as well as meetings for gathering requirements, estimating work & demoing completed work."
+				}
+			]
+		},		
+		{
+			"id": "5",
+			"client": "Illinois Farm Bureau",
+			"clientUrl": "http://ilfb.org/",
+			"agency": "Netrix Global",
+			"agencyUrl": "https://www.netrixglobal.com",
+			"backgroundUrl": "../media/images/raster/photography/photography_031.jpg",
+			"goal": "Streamline and redesign a web site that had grown to hundreds of pages with dozens of sub-sections and subdomains",
+			"tags": [
+				"HTML5", "CSS3", "Information Architecture", "Responsive Web Development", "JQuery", "Javascript", "Umbraco CMS", "User Training", ".NET", "Razor", "Authentication"
+			],
+			"contributions": [
+				{
+					"summary": "Streamlined information architecture",
+					"description": "In the first phase of the project, we collected data from the client about their dozens of various sites, the hundreds of pages of content within them & the users of each area of content, then I presented the client with a few options for how that content could be streamlined into fewer navigation paths to make things more intuitive for users going forward."
+				},{
+					"summary": "Pixel-perfect responsive design",
+					"description": "The designer that I worked with on the project later praised me as being one of the most reliably pixel-perfect front end developers he'd had the pleasure of working with."
+				},{
+					"summary": "Intuitive UI at all content depths",
+					"description": "Created a dynamically generated left-side navigation menu for inner content pages that works in tandem with the breadcrumb navigation at the top of the page to always ensure that users understand not just where they are in the larger scheme of things and how they got their, but also what other similar content is available and where they can go to dive deeper into issues they care about."
+				},{
+					"summary": "In-person CMS training",
+					"description": "Met with the ILFB organization on-site to provide training to multiple employees on how to leverage Umbraco to handle the various types of edits & updates that they would need to as they built out the content in the new site."
+				}
+			]
+		},		
+		{
+			"id": "6",
+			"client": "Energy Company",
+			"clientUrl": "NDA",
+			"agency": "Netrix Global",
+			"agencyUrl": "https://www.netrixglobal.com",
+			"backgroundUrl": "../media/images/raster/photography/photography_013.jpg",
+			"goal": "Migrate nationwide website and mobile app users to a new 2-factor authentication login platform across multiple operating companies",
+			"tags": [
+				"HTML5", "CSS3", "Accessibility", "JQuery", "Javascript", "Azure B2C", "InVision", "Azure DevOps", "Responsive Web Development", "Authentication", "Authorization"
+			],
+			"contributions": [
+				{
+					"summary": "Lead front end development efforts for website user flows",
+					"description": "Worked with multiple teams of developers and designers to ensure that the front end code I created functioned as expected and aligned with custom UI designs across multiple websites."
+				},{
+					"summary": "Assist with front end development efforts on Mobile Apps",
+					"description": "Assisted the developer who had taken the leading role in the front end development of user flows for mobile apps with the creation of a few of the flows, as well as testing of multiple flows."
+				},{
+					"summary": "Ensured Accessibility",
+					"description": "Leveraged NVDA screen reader, Firefox Developer Tools & BrowserStack to tackle accessibility bugs that arose from the customization of Microsoft's B2C authentication flows UI."
+				},{
+					"summary": "AGILE delivery",
+					"description": "Consistently designed, built out and expanded upon software functionality that met or exceeded client expectations in regular 2-week intervals. Participated in daily standup meetings, as well as meetings for gathering requirements, estimating work & demoing completed work."
+				}
+			]
+		},
+		{
+			"id": "7",
+			"client": "Simon Williamson Clinic",
+			"clientUrl": "https://simonwilliamsonclinic.com/",
+			"agency": "Netrix Global",
+			"agencyUrl": "https://www.netrixglobal.com",
+			"backgroundUrl": "../media/images/raster/photography/photography_040.jpg",
+			"goal": "Redesign of company intranet portal for managing HR documentation, employee contact info and upcoming event calendars",
+			"tags": [
+				"HTML5", "CSS3", "JQuery", "Javascript", "Responsive Web Development", ".NET", "Razor", "Kentico", "Authentication", "Authorization", "User Training"
+			],
+			"contributions": [
+				{
+					"summary": "Project Management",
+					"description": "Coordinated directly with client and fellow developers to ensure tasks were completed on time for several months as management worked through some transitions that had left the project without a dedicated PM."
+				},{
+					"summary": "Develop intuitive & consistent UI",
+					"description": "Developed entirely new UI flows as well as made enhancements and changes to existing screens while ensuring a consistent & intuitive user experience."
+				}
+			]
+		},
+		{
+			"id": "8",
+			"client": "Healthcare Company",
+			"clientUrl": "NDA",
+			"agency": "Netrix Global",
+			"agencyUrl": "https://www.netrixglobal.com",
+			"backgroundUrl": "../media/images/raster/photography/photography_059.jpg",
+			"goal": "Design, develop & launch a SSO portal site in Azure that was capable of displaying anywhere from 4 to 100+ homepage buttons without scrolling",
+			"tags": [
+				"HTML5", "CSS3", "Javascript", "Responsive Web Development", "Azure Hosting", "Azure DevOps", "Azure AD Authentication", "Azure CI/CD Pipeline", ".NET", "C#"
+			],
+			"contributions": [
+				{
+					"summary": "Convert desktop UI design featuring 4 primary buttons to responsive code capable of supporting over 100 buttons on mobile",
+					"description": "Given client requirements that prohibited scrolling, I developed javascript/css code capable of scaling button sizes up/down as needed (as well as progressively showing/hiding additional button content) based not only on the user's device size, but also the number of buttons present in the application (as the client wanted the ability to add/remove buttons as needed without needing to worry about layout concerns)."
+				},{
+					"summary": "DevOps & CI/CD Pipeline Setup",
+					"description": "The original project scope called for the setup of both a devOps project management area as well as an Azure CI/CD Pipeline, so I leveraged my employer's Azure credits to set up a proof-of-concept project and deployment pipeline & then used that as a reference when helping the client to set up the actual project in Azure themselves."
+				},{
+					"summary": "Full Stack Development",
+					"description": "As the only active developer on a project team that included a designer, project manager, a couple of network experts and a principal architect who was primarily functioning as a sales rep and did not have any billable development hours on the project, I was the primary person responsible for both the front end code and the C# backend (which was primarily responsible for extracting information from the active authorization session & returning it to the front end for display)."
+				}
+			]
+		},
+		{
+			"id": "9",
+			"client": "Dealer Apex",
+			"clientUrl": "http://web.archive.org/web/20150713015210/http://www.dealerapex.com/",
+			"agency": "Apps Communications (Parent Company of Dealer Apex)",
+			"agencyUrl": "http://www.appscorp.net/",
+			"backgroundUrl": "../media/images/raster/photography/photography_010.jpg",
+			"goal": "Redesign existing website using responsive design principals to capitalize on market trends that showed an increased interest in responsive design",
+			"tags": [
+				"HTML5", "CSS3", "Javascript", "Responsive Web Development"
+			],
+			"contributions": [
+				{
+					"summary": "Relentlessly advocate for Responsive Development",
+					"description": "Noticing that our client's were seeing drastic increases in their dealership website's mobile traffic and knowing that responsive development could be a game-changer for those clients (who, at the time simply had separate dedicated mobile sites), I started advocating for a switch to responsive design (with the idea of redesigning dealerapex.com site first, then slowly reworking existing client sites). After sharing client traffic analytics and arguments in favor of this approach, when one of the business partners still wasn't on board with effort because of the time it would take away from my existing responsibilities, I took it upon myself to do the work after regular business hours on my own time because I knew how important it would be to the business in the long term."
+				},
+				{
+					"summary": "Preservation of high SEO rankings",
+					"description": "One of the primary arguments one of the business owner's presented against doing a redesign was the risk of losing search rankings in the process, so careful attention was paid to ensure all existing site content was migrated over, largely as-is from an html standpoint (i.e. meta tags, headings, text and link content in the page body, etc.) and redirects were added as appropriate."
+				}
+			]
+		}
+	]
+}
