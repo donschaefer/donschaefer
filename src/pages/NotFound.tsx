@@ -5,7 +5,6 @@ import HeroContainer from '../components/HeroContainer/HeroContainer';
 import { useElementDimensions } from '../hooks/useElementHeight';
 import Page from '../components/BasicPageTemplate/BasicPageTemplate';
 
-// TODO: This works on localhost, but not live server
 const NotFound = () => {
 	const theme = useTheme();
 	const location = useLocation();
