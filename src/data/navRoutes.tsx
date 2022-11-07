@@ -62,7 +62,7 @@ export const navRoutes: INavRoute[] = [
 		label: NavRouteLabel.GitHub,
 		shortLabel: getShortNavRouteLabel(NavRouteLabel.GitHub),
 		icon: <GitHubIcon />,
-		path: `https://github.com/donschaefer/`,
+		path: `https://github.com/donschaefer/portfolio`,
 	},
 	{
 		key: `philosophy`,
