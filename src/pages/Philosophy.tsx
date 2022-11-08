@@ -38,7 +38,7 @@ const Philosophy = () => {
 				<Typography>{`My grandfather would often say "Everything you own owns a piece of you", and it's definitely true. Whether it's the things that you own or the responsibilities that you're taking on, they all weigh on you in some way, so if you want to be at your best personally & have the means to respond to changes when they inevitably arise, you need to be intentional about what you take on.`}</Typography>
 				<Typography>
 					{`In the world of software development, the principals outlined at the `}
-					<a href={`https://agilemanifesto.org`} target={`_blank`} rel={`noopener noreferrer`}>Manifesto for Agile Software Development</a>
+					<a href={`https://agilemanifesto.org`} style={{ color: theme.palette.primary.main }} target={`_blank`} rel={`noopener noreferrer`}>Manifesto for Agile Software Development</a>
 					{` often act as a guide to help teams successfully simplify their processes & deliverables to consistently deliver great results.`}</Typography>
 			</section>
 		</InnerPage>

@@ -123,7 +123,7 @@ export default function Layout({ children }: ICustomContainerProps) {
 					<Typography
 						sx={{
 							marginBottom: theme.spacing(),
-							color: theme.palette.grey[600]
+							color: theme.palette.grey[500]
 						}}
 					>
 						Powered By

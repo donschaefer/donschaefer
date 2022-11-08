@@ -88,6 +88,7 @@ const Gallery = () => {
 									key={index} 
 								>
 									<Button
+										tabIndex={0}
 										onClick={() => setModalContent(media)}
 									>
 										<Paper

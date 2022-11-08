@@ -67,7 +67,7 @@ export default function Navigation({ theme, topNav, topNavButtonHeight }: INavig
 	};
 
 	const handleLinkClick = (pageName: string, path: string) => {
-		setDrawerIsOpen(false);
+		setDrawerIsOpen(false);		
 		if (!path.startsWith(`http`)) {
 			setCurrentPage(pageName);
 		} else {
@@ -91,10 +91,13 @@ export default function Navigation({ theme, topNav, topNavButtonHeight }: INavig
 				color: theme.palette.common.white,
 				width: `100%`
 			} : undefined } />} 
+			tabIndex={0}
 			onClick={() => setDrawerIsOpen(!drawerIsOpen)}
 			sx={ topNav ? {
+				"& .MuiTouchRipple-root *": { display: `none` },
 				padding: theme.spacing(),
 			} : {
+				"& .MuiTouchRipple-root *": { display: `none` },
 				"& span.MuiBottomNavigationAction-label": {
 					fontSize: `.7rem` 
 				}
@@ -132,6 +135,7 @@ export default function Navigation({ theme, topNav, topNavButtonHeight }: INavig
 								color={theme.palette.primary.main}
 								component={Link}
 								to={link.path}
+								tabIndex={0}
 								onClick={() => handleLinkClick(link.label, link.path)}
 								sx={{
 									"& span.MuiBottomNavigationAction-label": {
@@ -167,6 +171,7 @@ export default function Navigation({ theme, topNav, topNavButtonHeight }: INavig
 						{hiddenLinks.map((link) => (
 							<ListItem key={link.label} disablePadding>
 								<ListItemButton
+									tabIndex={0}
 									onClick={() => handleLinkClick(link.label, link.path)}
 								>
 									{link.icon}

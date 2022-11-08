@@ -88,7 +88,7 @@ const Home = () => {
 													padding: `0 .5rem 0 0`,
 													textAlign: `center`,
 													wordBreak: `break-word`,
-													lineHeight: `2rem`,
+													lineHeight: `1.5`,
 													fontSize: `2rem`,
 													"&:after": {
 														content: `${(index >= 2) ? `""` : `" | "`}`
@@ -103,17 +103,41 @@ const Home = () => {
 							})}
 						</Box>						
 					</Zoom>
-					<Typography
-						sx={{
+					<div
+						style={{
 							width: centerContentWidth,
 							maxWidth: centerContentMaxWidth,
 							textAlign: `center`,							
 							marginBottom: theme.spacing(4),
-							color: theme.palette.grey[200]
 						}}
 					>
-						{`As a front end developer with over ${experience} years of experience in UI design & web development, these principals inform not only my work, but my life as well.`}
-					</Typography>
+						<Typography
+							sx={{		
+								display: `inline`,
+								color: theme.palette.grey[200],
+								margin: `0 .5em 0 0`
+							}}
+						>
+							{`As a`}
+						</Typography>
+						<h1
+							style={{								
+								display: `inline`,
+								fontWeight: `normal`,
+								fontSize: `1rem`,
+								color: theme.palette.grey[200]
+							}}
+						>{`front end developer with over ${experience} years of experience in UI design & web development`}</h1>
+						<Typography
+							sx={{
+								display: `inline`,								
+								color: theme.palette.grey[200]
+							}}
+						>
+							{`, these principals inform not only my work, but my life as well.`}
+						</Typography>
+					</div>
+					
 				</HeroContainer>	
 				<Box 
 					sx={{ 

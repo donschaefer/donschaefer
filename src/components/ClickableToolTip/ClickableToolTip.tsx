@@ -32,6 +32,7 @@ const ClickableToolTip = ({ buttonIcon, toolTipText }: IClickableToolTipProps ) 
 					title={toolTipText}
 				>
 					<IconButton 
+						tabIndex={0}
 						onClick={handleTooltipOpen}
 						sx={{ 
 							padding: `0 .1rem`, 

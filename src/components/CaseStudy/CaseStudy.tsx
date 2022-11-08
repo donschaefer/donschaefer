@@ -128,7 +128,7 @@ const CaseStudy = ({ client, agency, agencyUrl, goal, contributions, tags, clien
 		};
 
 		const linkContent = isClient ? <LinkIcon /> : (
-			<span>{`On behalf of ${name}`}</span>
+			<span>{name}</span>
 		);
 
 		return (
@@ -143,13 +143,17 @@ const CaseStudy = ({ client, agency, agencyUrl, goal, contributions, tags, clien
 							buttonIcon={<HelpOutlineIcon />}
 						/>			
 					) : (
-						<Link 
-							href={url} 
-							target={`_blank`} 
-							rel={`noreferrer noopener`} 
-						>
-							{linkContent}
-						</Link>
+						<span>
+							{!isClient && <span style={{ color: theme.palette.grey[500] }}>On behalf of </span>}
+							<Link 
+								href={url} 
+								target={`_blank`} 
+								rel={`noreferrer noopener`} 
+								aria-label={name}
+							>
+								{linkContent}
+							</Link>
+						</span>
 					) : linkContent }
 				</span>
 			</Typography>
@@ -159,6 +163,9 @@ const CaseStudy = ({ client, agency, agencyUrl, goal, contributions, tags, clien
 	const toggleAccordionPanel = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
 		setExpandedPanel(isExpanded ? panel : false);
 	};
+
+	const charactersToRemove = [` `,`&`,`.`,`,`,`/`];
+	const parsedClient = Array.from(client).filter(char => charactersToRemove.indexOf(char) < 0).join(``);
 
 	return (
 		<Container
@@ -177,58 +184,62 @@ const CaseStudy = ({ client, agency, agencyUrl, goal, contributions, tags, clien
 					{agency && companyName(agency, agencyUrl)}
 				</CaseStudyHeader>
 				<CaseStudyGoal>
-					<Typography variant={`h4`} sx={{ marginBottom: theme.spacing() }}>Goal</Typography>
+					<Typography variant={`h3`} sx={{ marginBottom: theme.spacing() }}>Goal</Typography>
 					<Typography>{goal}</Typography>
 				</CaseStudyGoal>
 				<CaseStudyContributions>
-					<Typography variant={`h4`}>Contributions</Typography>
-					<ul style={{ padding: 0, marginBottom: theme.spacing() }}>
-						{contributions.map(highlight => {
-							const contributionKey = highlight.summary.replaceAll(` `, ``);
-							return (
-								<Accordion 
-									key={contributionKey}
-									expanded={expandedPanel === `${contributionKey}`} 
-									onChange={toggleAccordionPanel(`${contributionKey}`)}
+					<Typography 
+						variant={`h3`}
+						sx={{ marginBottom: theme.spacing()}}
+					>
+						Contributions
+					</Typography>
+					{contributions.map((highlight, index) => {							
+						const parsedHighlight = Array.from(highlight.summary).filter(char => charactersToRemove.indexOf(char) < 0).join(``);
+						const contributionKey = `${parsedClient}${parsedHighlight}${index}`;
+						return (
+							<Accordion 
+								key={contributionKey}
+								expanded={expandedPanel === `${contributionKey}`} 
+								onChange={toggleAccordionPanel(`${contributionKey}`)}
+							>
+								<AccordionSummary
+									expandIcon={<AddCircleOutlineIcon />}
+									aria-controls={`${contributionKey}-content`}
+									id={`${contributionKey}-header`}
+									sx={{
+										padding: theme.spacing(),
+										flexDirection: `row-reverse`,
+										"& .MuiAccordionSummary-expandIconWrapper": {
+											color: theme.palette.primary.main
+										},
+										"&:hover .MuiAccordionSummary-expandIconWrapper": {
+											color: theme.palette.primary.light
+										},
+										"& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
+											transform: `rotate(45deg)`
+										}
+									}}
 								>
-									<AccordionSummary
-										expandIcon={<AddCircleOutlineIcon />}
-										aria-controls="panel1bh-content"
-										id="panel1bh-header"
-										sx={{
-											padding: theme.spacing(),
-											flexDirection: `row-reverse`,
-											"& .MuiAccordionSummary-expandIconWrapper": {
-												color: theme.palette.primary.main
-											},
-											"&:hover .MuiAccordionSummary-expandIconWrapper": {
-												color: theme.palette.primary.light
-											},
-											"& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
-												transform: `rotate(45deg)`
-											}
+									<span 
+										style={{
+											padding: `0 ${theme.spacing()}`
 										}}
 									>
-										<span 
-											style={{
-												padding: `0 ${theme.spacing()}`
-											}}
-										>
-											{highlight.summary}
-										</span>
-									</AccordionSummary>
-									<AccordionDetails
-										sx={{
-											backgroundColor: theme.palette.grey[800],
-											paddingLeft: theme.spacing(5)
-										}}
-									>
-										<span>{highlight.description}</span>
-									</AccordionDetails>
-								</Accordion>
-							);
-						})}
-					</ul>					
+										{highlight.summary}
+									</span>
+								</AccordionSummary>
+								<AccordionDetails
+									sx={{
+										backgroundColor: theme.palette.grey[800],
+										paddingLeft: theme.spacing(5)
+									}}
+								>
+									<span>{highlight.description}</span>
+								</AccordionDetails>
+							</Accordion>
+						);
+					})}					
 				</CaseStudyContributions>
 				<CaseStudySkills>
 					<CaseStudySkillsList>
