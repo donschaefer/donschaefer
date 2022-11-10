@@ -7,7 +7,7 @@ import './fonts/goodtime.css';
 import { navRoutes } from './data/navRoutes';
 import NotFound from './pages/NotFound';
 
-// TODO: Improve app performance on lighthouse test
+// TODO: Optimize performance (particularly on Gallery page) for lighthouse test
 function App() {
 	const currentTheme = createTheme(darkTheme);
 

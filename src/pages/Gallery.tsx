@@ -11,6 +11,7 @@ import { MediaType } from '../models/MediaType';
 import { responsiveImageUrl } from '../utilities/responsiveHelpers';
 import BasicPage from '../components/BasicPageTemplate/BasicPageTemplate';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import Html5VideoPlayer from '../components/HTML5VideoPlayer/Html5VideoPlayer';
 
 const Gallery = () => {
 	const theme = useTheme();
@@ -108,7 +109,7 @@ const Gallery = () => {
 											backgroundColor: `rgba(33,33,33,1) !important`,
 											borderRadius: `5px`,
 											marginBottom: theme.spacing()
-										}
+										},
 									}}
 								>
 									<AccordionSummary
@@ -143,62 +144,62 @@ const Gallery = () => {
 										<Masonry 
 											columns={columns}
 											spacing={2}
-											key={type}
+											key={type}											
 										>
-											{mediaData.map((media, index) => (
-												<React.Fragment
-													key={index} 
-												>
-													<Button
-														tabIndex={0}
-														onClick={() => setModalContent(media)}
-														sx={{
-													
-														}}
+											{mediaData.map((media, index) => {												
+												const imgUrl = (type === MediaType.Animation) ? media.thumbnail : responsiveImageUrl((window ? window.innerWidth : 0), theme.breakpoints, media.url);
+												return (
+													<React.Fragment
+														key={index} 
 													>
-														<Paper
-															sx={{
-																backgroundColor: theme.palette.common.white,
-															}}
+														<Button
+															tabIndex={0}
+															onClick={() => setModalContent(media)}
 														>
-															<figure
-																style={{
-																	margin: `.3rem`
+															<Paper
+																sx={{
+																	backgroundColor: theme.palette.common.white,
 																}}
 															>
-																<img
-																	src={responsiveImageUrl((window ? window.innerWidth : 0), theme.breakpoints, media.url)} 
-																	alt={media.title}
-																	loading="lazy"
+																<figure
 																	style={{
-																		borderRadius: 4,
-																		display: `block`,
-																		width: `100%`,
-																	}}
-																/>
-																<figcaption
-																	style={{
-																		display: `flex`,
-																		flexDirection: `column`,
-																		justifyContent: `center`,
-																		alignItems: `center`,
-																		minHeight: `2.7rem`
+																		margin: `.3rem`
 																	}}
 																>
-																	<Typography
-																		sx={{ 
-																			color: theme.palette.grey[900],
-																			textTransform: `none`
+																	<img
+																		src={imgUrl} 
+																		alt={media.title}
+																		loading="lazy"
+																		style={{
+																			borderRadius: 4,
+																			display: `block`,
+																			width: `100%`,
+																		}}
+																	/>
+																	<figcaption
+																		style={{
+																			display: `flex`,
+																			flexDirection: `column`,
+																			justifyContent: `center`,
+																			alignItems: `center`,
+																			minHeight: `2.7rem`
 																		}}
 																	>
-																		{`"${media.title}"`}
-																	</Typography>
-																</figcaption>
-															</figure>
-														</Paper>
-													</Button>
-												</React.Fragment>
-											))}
+																		<Typography
+																			sx={{ 
+																				color: theme.palette.grey[900],
+																				textTransform: `none`
+																			}}
+																		>
+																			{`"${media.title}"`}
+																		</Typography>
+																	</figcaption>
+																</figure>
+															</Paper>
+														</Button>
+													</React.Fragment>
+												);
+											})}
 										</Masonry>
 									</AccordionDetails>
 								</Accordion>								
@@ -235,23 +236,35 @@ const Gallery = () => {
 											color: theme.palette.common.white
 										}} /> 
 									</Button>
-									<img
-										src={responsiveImageUrl((window ? window.innerWidth : 0), theme.breakpoints, modalContent.url)}
-										alt={modalContent.title}
-										loading="lazy"
-										style={{
-											borderRadius: 4,
-											display: `block`,
-											maxHeight: `90%`,
-											maxWidth: `90%`,
-											margin: `auto`
-										}}
-									/>
+									{(modalContent.type === MediaType.Animation) ? (
+										<Html5VideoPlayer
+											title={modalContent.title}
+											paths={(modalContent.urlAlternatives && (modalContent.urlAlternatives.length > 0)) ? [modalContent.url, ...modalContent.urlAlternatives] : [modalContent.url]}
+											thumbnail={modalContent.thumbnail}
+										/>
+									) : (
+										<img
+											src={responsiveImageUrl((window ? window.innerWidth : 0), theme.breakpoints, modalContent.url)}
+											alt={modalContent.title}
+											loading="lazy"
+											style={{
+												borderRadius: 4,
+												display: `block`,
+												maxHeight: `90%`,
+												maxWidth: `90%`,
+												margin: `auto`
+											}}
+										/>
+									)}
+									
 								</>							
 							</Modal>
 						}
+						{(imageData.filter(iData => iData.url.includes(`vimeo.com`)).length > 0) && 							
+							<script src="https://player.vimeo.com/api/player.js"></script>
+						}
 					</Container>					
-				</Box>
+				</Box>						
 			</section>
 		</BasicPage>		
 	);

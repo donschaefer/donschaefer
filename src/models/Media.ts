@@ -6,7 +6,9 @@ export interface Media {
 	date?: Date;
 	location?: string;
 	medium?: string;
+	thumbnail?: string;
 	title: string;
-	type?: MediaType;
+	type: MediaType;
 	url: string;
+	urlAlternatives?: string[];
 }
