@@ -1,6 +1,6 @@
 import Masonry from '@mui/lab/Masonry';
 import type {} from '@mui/lab/themeAugmentation';
-import { Box, Button, Container, Modal, Paper, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Container, Modal, Paper, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import HeroContainer from '../components/HeroContainer/HeroContainer';
 import data from '../data/media.json';
@@ -10,13 +10,18 @@ import { Media } from '../models/Media';
 import { MediaType } from '../models/MediaType';
 import { responsiveImageUrl } from '../utilities/responsiveHelpers';
 import BasicPage from '../components/BasicPageTemplate/BasicPageTemplate';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const Gallery = () => {
 	const theme = useTheme();
 	const [headerHeight] = useElementDimensions(`header`);
 	const [imageData, setImageData] = useState<Media[]>([]);
 	const [modalContent, setModalContent] = useState<Media | null>(null);
+	const [expandedPanel, setExpandedPanel] = React.useState<string | false>(false);
+	const pageBackgroundColor = theme.palette.grey[300];
 	const gridSpacing = 4; // TODO: Find a good centralized location for this
+
+	const convertMediaTypeToKey = (type: MediaType) => (type as string).replaceAll(` `,``);
 
 	useEffect(() => {
 		// TODO: Replace with a fetch from an external source
@@ -34,7 +39,15 @@ const Gallery = () => {
 			}
 		});
 		setImageData(media);
+		const firstTypeWithData = Object.values(MediaType).find(type => media.filter(m => m.type === type).length > 0);
+		if (firstTypeWithData) {
+			setExpandedPanel(convertMediaTypeToKey(firstTypeWithData));
+		}
 	}, []);
+
+	const toggleAccordionPanel = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+		setExpandedPanel(isExpanded ? panel : false);
+	};
 
 	let columns = 1;
 	if (useMediaQuery(theme.breakpoints.up(`sm`))) {
@@ -70,7 +83,7 @@ const Gallery = () => {
 				<Box 
 					sx={{ 
 						flexGrow: 1,
-						backgroundColor: theme.palette.grey[300],
+						backgroundColor: pageBackgroundColor,
 						minHeight: `75vh`,
 						padding: `${theme.spacing(gridSpacing)}`,						
 						display: `flex`,
@@ -79,62 +92,119 @@ const Gallery = () => {
 					}}
 				>
 					<Container>
-						<Masonry 
-							columns={columns}
-							spacing={2}
-						>
-							{imageData.map((media, index) => (
-								<React.Fragment
-									key={index} 
+						{Object.values(MediaType).map(type => {
+							const key = convertMediaTypeToKey(type);
+							const mediaData = imageData.filter(iData => iData.type === type);
+							return !mediaData.length ? <React.Fragment key={key}></React.Fragment> : (
+								<Accordion
+									key={key}
+									elevation={0}
+									expanded={expandedPanel === `${key}`} 
+									onChange={toggleAccordionPanel(`${key}`)}
+									sx={{
+										backgroundColor: pageBackgroundColor,
+										"& > .MuiButtonBase-root": {
+											padding: `0 1rem`,
+											backgroundColor: `rgba(33,33,33,1) !important`,
+											borderRadius: `5px`,
+											marginBottom: theme.spacing()
+										}
+									}}
 								>
-									<Button
-										tabIndex={0}
-										onClick={() => setModalContent(media)}
+									<AccordionSummary
+										expandIcon={<AddCircleOutlineIcon />}
+										aria-controls={`${key}-content`}
+										id={`${key}-header`}
+										sx={{
+											padding: theme.spacing(),
+											flexDirection: `row-reverse`,
+											"& *": {
+												transition: `1s all ease`
+											},
+											"& .MuiAccordionSummary-expandIconWrapper": {
+												color: theme.palette.primary.main
+											},
+											"&:hover .MuiAccordionSummary-expandIconWrapper": {
+												color: theme.palette.primary.light
+											},
+											"& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
+												transform: `rotate(45deg)`
+											}
+										}}
 									>
-										<Paper
+										<Typography 
+											variant={`h2`}
 											sx={{
-												backgroundColor: theme.palette.common.white
+												padding: `0 0 0 ${theme.spacing(2)}`
 											}}
+										>{type}</Typography>
+									</AccordionSummary>
+									<AccordionDetails>
+										<Masonry 
+											columns={columns}
+											spacing={2}
+											key={type}
 										>
-											<figure
-												style={{
-													margin: `.3rem`
-												}}
-											>
-												<img
-													src={responsiveImageUrl((window ? window.innerWidth : 0), theme.breakpoints, media.url)} 
-													alt={media.title}
-													loading="lazy"
-													style={{
-														borderRadius: 4,
-														display: `block`,
-														width: `100%`,
-													}}
-												/>
-												<figcaption
-													style={{
-														display: `flex`,
-														flexDirection: `column`,
-														justifyContent: `center`,
-														alignItems: `center`,
-														minHeight: `2.7rem`
-													}}
+											{mediaData.map((media, index) => (
+												<React.Fragment
+													key={index} 
 												>
-													<Typography
-														sx={{ 
-															color: theme.palette.grey[900],
-															textTransform: `none`
+													<Button
+														tabIndex={0}
+														onClick={() => setModalContent(media)}
+														sx={{
+													
 														}}
 													>
-														{`"${media.title}"`}
-													</Typography>
-												</figcaption>
-											</figure>
-										</Paper>
-									</Button>
-								</React.Fragment>
-							))}
-						</Masonry>
+														<Paper
+															sx={{
+																backgroundColor: theme.palette.common.white,
+															}}
+														>
+															<figure
+																style={{
+																	margin: `.3rem`
+																}}
+															>
+																<img
+																	src={responsiveImageUrl((window ? window.innerWidth : 0), theme.breakpoints, media.url)} 
+																	alt={media.title}
+																	loading="lazy"
+																	style={{
+																		borderRadius: 4,
+																		display: `block`,
+																		width: `100%`,
+																	}}
+																/>
+																<figcaption
+																	style={{
+																		display: `flex`,
+																		flexDirection: `column`,
+																		justifyContent: `center`,
+																		alignItems: `center`,
+																		minHeight: `2.7rem`
+																	}}
+																>
+																	<Typography
+																		sx={{ 
+																			color: theme.palette.grey[900],
+																			textTransform: `none`
+																		}}
+																	>
+																		{`"${media.title}"`}
+																	</Typography>
+																</figcaption>
+															</figure>
+														</Paper>
+													</Button>
+												</React.Fragment>
+											))}
+										</Masonry>
+									</AccordionDetails>
+								</Accordion>								
+							);
+						})}
+						
 						{modalContent && 
 							<Modal
 								open={modalContent ? true : false}
