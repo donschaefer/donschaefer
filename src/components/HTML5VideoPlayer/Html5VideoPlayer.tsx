@@ -2,7 +2,6 @@
 import React from 'react';
 import videojs, { VideoJsPlayer } from "video.js";
 import 'video.js/dist/video-js.css';
-import '@videojs/themes/dist/forest/index.css';
 import './html5VideoPlayer.css';
 
 // eslint-disable-next-line no-shadow
@@ -108,7 +107,7 @@ const Html5VideoPlayer = ({ title, paths, thumbnail, vttCaptions, height, width 
 			<video
 				ref={videoRef}
 				id="my-video"
-				className="video-js vjs-theme-forest vjs-custom"
+				className="video-js vjs-custom"
 				controls
 				preload="auto"
 				height={height}
