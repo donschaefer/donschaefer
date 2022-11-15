@@ -99,7 +99,7 @@
 			"backgroundUrl": "../media/images/raster/photography/photography_024.jpg",
 			"goal": "Integrate new workflows into an existing custom application that enable teachers to enroll students in targeted tutoring sessions and allow teachers, tutors, students and parents to monitor the progress of those sessions.",
 			"tags": [
-				"HTML5", "CSS3", "React", "TypeScript", "React Hooks", "SQL", "C#", ".NET", "Agile", "Authentication", "Authorization", "CI/CD"
+				"HTML5", "CSS3", "React", "TypeScript", "React Hooks", "Styled Components", "SQL", "C#", ".NET", "Agile", "Authentication", "Authorization", "CI/CD"
 			],
 			"contributions": [
 				{
