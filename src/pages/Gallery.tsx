@@ -38,7 +38,7 @@ const Gallery = () => {
 					url: m.url
 				};
 			}
-		});
+		}).reverse();
 		setImageData(media);
 		const firstTypeWithData = Object.values(MediaType).find(type => media.filter(m => m.type === type).length > 0);
 		if (firstTypeWithData) {
@@ -146,8 +146,8 @@ const Gallery = () => {
 											spacing={2}
 											key={type}											
 										>
-											{mediaData.map((media, index) => {												
-												const imgUrl = (type === MediaType.Animation) ? media.thumbnail : responsiveImageUrl((window ? window.innerWidth : 0), theme.breakpoints, media.url);
+											{mediaData.map((media, index) => {
+												const imgUrl = (type === MediaType.Animation) ? media.thumbnail : responsiveImageUrl(0, theme.breakpoints, media.url);
 												return (
 													<React.Fragment
 														key={index} 
