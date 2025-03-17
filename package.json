@@ -21,7 +21,10 @@
     "ts-node": "^10.9.1",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://donschaefer.github.io/donschaefer",
   "scripts": {
+	"predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "node_modules\\.bin\\eslint src\\** --fix && react-scripts start",
     "build": "node_modules\\.bin\\eslint src\\** --fix && react-scripts test --verbose --watchAll=false ./src/tests/unitTests && react-scripts build",
     "test": "react-scripts test --verbose --watchAll=false ./src/tests/unitTests",
@@ -64,6 +67,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^6.3.0",
     "react-scripts": "^5.0.1",
     "sass": "^1.56.0",
     "sass-loader": "^13.1.0",
