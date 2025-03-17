@@ -1,0 +1,16 @@
+# data 
+**/*.json
+
+# styles
+**/*.css
+**/*.scss
+**/*.sass
+
+# images
+**/*.svg
+**/*.png
+
+# fonts
+**/*.eot
+**/*.ttf
+**/*.woff
