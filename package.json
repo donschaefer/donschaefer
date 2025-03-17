@@ -21,7 +21,7 @@
     "ts-node": "^10.9.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://donschaefer.github.io/donschaefer",
+  "homepage": "https://donschaefer.github.io/",
   "scripts": {
 	"predeploy": "npm run build",
     "deploy": "gh-pages -d build",
