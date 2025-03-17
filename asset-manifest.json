@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/donschaefer/public/static/css/main.8d87496f.css",
-    "main.js": "/donschaefer/public/static/js/main.5c700e9b.js",
-    "static/js/453.5565870f.chunk.js": "/donschaefer/public/static/js/453.5565870f.chunk.js",
-    "static/media/goodtime-webfont.ttf": "/donschaefer/public/static/media/goodtime-webfont.07142cc7b1e7023d1250.ttf",
-    "static/media/goodtime-webfont.woff": "/donschaefer/public/static/media/goodtime-webfont.496ef3e663e0f4fa39e9.woff",
-    "static/media/goodtime-webfont.eot": "/donschaefer/public/static/media/goodtime-webfont.2470f556d42f9a0a694a.eot",
-    "index.html": "/donschaefer/public/index.html",
-    "main.8d87496f.css.map": "/donschaefer/public/static/css/main.8d87496f.css.map",
-    "main.5c700e9b.js.map": "/donschaefer/public/static/js/main.5c700e9b.js.map",
-    "453.5565870f.chunk.js.map": "/donschaefer/public/static/js/453.5565870f.chunk.js.map"
+    "main.css": "/static/css/main.5bd94253.css",
+    "main.js": "/static/js/main.f0fc5495.js",
+    "static/js/453.5565870f.chunk.js": "/static/js/453.5565870f.chunk.js",
+    "static/media/goodtime-webfont.ttf": "/static/media/goodtime-webfont.07142cc7b1e7023d1250.ttf",
+    "static/media/goodtime-webfont.woff": "/static/media/goodtime-webfont.496ef3e663e0f4fa39e9.woff",
+    "static/media/goodtime-webfont.eot": "/static/media/goodtime-webfont.2470f556d42f9a0a694a.eot",
+    "index.html": "/index.html",
+    "main.5bd94253.css.map": "/static/css/main.5bd94253.css.map",
+    "main.f0fc5495.js.map": "/static/js/main.f0fc5495.js.map",
+    "453.5565870f.chunk.js.map": "/static/js/453.5565870f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d87496f.css",
-    "static/js/main.5c700e9b.js"
+    "static/css/main.5bd94253.css",
+    "static/js/main.f0fc5495.js"
   ]
 }
