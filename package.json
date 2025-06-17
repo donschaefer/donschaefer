@@ -25,13 +25,13 @@
   "scripts": {
 	"predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "eslint src/** --fix && react-scripts start",
-    "build": "eslint src/** --fix && react-scripts test --verbose --watchAll=false ./src/tests/unitTests && react-scripts build",
+    "start": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix && react-scripts start",
+    "build": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix && react-scripts test --verbose --watchAll=false ./src/tests/unitTests && react-scripts build",
     "test": "react-scripts test --verbose --watchAll=false ./src/tests/unitTests",
     "eject": "react-scripts eject",
     "build-for-local": "react-scripts start",
     "build-for-server": "react-scripts build",
-    "fix": "eslint src/** --fix",
+    "fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "test-logic": "react-scripts test --verbose --watchAll=false ./src/tests/unitTests",
     "test-browsers": "playwright test --browser=all",
     "test-browser": "playwright test --headed"
