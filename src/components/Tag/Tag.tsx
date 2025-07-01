@@ -1,4 +1,3 @@
-import { useTheme } from '@emotion/react';
 import { styled } from '@mui/material';
 import React from 'react';
 
@@ -24,8 +23,6 @@ const StyledTag = styled('span')(({ theme }) => ({
 }));
 
 const Tag = ({ text }: ITagProps) => {
-	const theme = useTheme();
-	
 	return (
 		<StyledTag>
 			{text}
