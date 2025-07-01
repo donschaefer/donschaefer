@@ -13,7 +13,6 @@ export default defineConfig({
 		outDir: `build`,
 	},
 	// Vitest config (not typed by Vite, but supported by Vitest)
-	// @ts-expect-error: 'test' is a Vitest config extension
 	test: {
 		environment: `jsdom`,
 		globals: true,
