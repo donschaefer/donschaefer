@@ -1,21 +1,23 @@
-
-import { Breakpoints } from "@mui/material";
-import { NavRouteLabel } from "../../models/NavRouteLabel";
-import { navRoute } from "../../utilities/routeHelpers";
-import { navRoutes } from "../../data/navRoutes";
-import { responsiveImageSuffix, responsiveImageUrl } from "../../utilities/responsiveHelpers";
-import { getShortNavRouteLabel } from "../../utilities/stringHelpers";
-// TODO: get SCSS variables to import during test so that "muiBreakPoints can be leveraged instead of the current hard-coded breakpoints"
-// import { muiBreakPoints } from "../../themes/muiBreakpoints";
+import { Breakpoints } from '@mui/material';
+import { NavRouteLabel } from '../../models/NavRouteLabel';
+import { navRoute } from '../../utilities/routeHelpers';
+import { navRoutes } from '../../data/navRoutes';
+import { responsiveImageSuffix, responsiveImageUrl } from '../../utilities/responsiveHelpers';
+import { getShortNavRouteLabel } from '../../utilities/stringHelpers';
+import { afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+afterEach(() => {
+	cleanup();
+});
 
 const breakpoints = {
-	values: {		
+	values: {
 		xs: 0,
 		sm: 600,
 		md: 900,
 		lg: 1200,
-		xl: 1536
-	}
+		xl: 1536,
+	},
 } as Breakpoints;
 const baseUrl = `../media/images/photography/photography_001.jpg`;
 const adjustmentValue = 1;
