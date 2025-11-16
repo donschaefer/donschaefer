@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-shadow
 export enum MediaType {
-	Photography = `Photography`,
+	UiDesign = `UI Design`,
 	GraphicDesign = `Graphic Design`,
+	Photography = `Photography`,
 	Animation = `Animation`,
 	Illustration = `Illustration`,
-	UiDesign = `UI Design`
 }
