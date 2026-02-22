@@ -119,7 +119,7 @@ const CaseStudy = ({ client, agency, agencyUrl, goal, contributions, tags, clien
 	const [expandedPanel, setExpandedPanel] = React.useState<string | false>(false);
 	
 
-	const companyName = (name: string, url?: string, isClient?: boolean): JSX.Element => {
+	const companyName = (name: string, url?: string, isClient?: boolean): React.JSX.Element => {
 		const companyStyles: React.CSSProperties = isClient ? {
 			paddingRight: `.25em`,
 			color: theme.palette.getContrastText(theme.palette.background.default)
@@ -202,6 +202,7 @@ const CaseStudy = ({ client, agency, agencyUrl, goal, contributions, tags, clien
 								key={contributionKey}
 								expanded={expandedPanel === `${contributionKey}`} 
 								onChange={toggleAccordionPanel(`${contributionKey}`)}
+								slotProps={{ heading: { component: 'div' } }}
 							>
 								<AccordionSummary
 									expandIcon={<AddCircleOutlineIcon />}

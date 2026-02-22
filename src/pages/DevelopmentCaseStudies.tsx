@@ -131,7 +131,7 @@ const CaseStudies = () => {
 								maxWidth: theme.breakpoints.values.xl
 							}}
 						>
-							<Grid item xs={12} md={6}>
+						<Grid item xs={12} md={6}>
 								<Grow 
 									in={true}
 									style={{ transformOrigin: `0 0 0`}}

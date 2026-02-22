@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
-import videojs, { VideoJsPlayer } from "video.js";
+import videojs from "video.js";
+type VideoJsPlayer = ReturnType<typeof videojs>;
 import 'video.js/dist/video-js.css';
 import './html5VideoPlayer.css';
 
@@ -21,7 +22,7 @@ export interface IHtml5VideoPlayerProps {
 }
 
 const Html5VideoPlayer = ({ title, paths, thumbnail, vttCaptions, height, width }: IHtml5VideoPlayerProps) => {			
-	const videoRef = React.useRef<HTMLVideoElement>(null);
+	const videoRef = React.useRef<HTMLVideoElement | null>(null);
 	const playerRef = React.useRef<VideoJsPlayer | null>(null);
 	const getVideoType = (): VideoType => {
 		if (paths[0].includes(`youtube.com`)) {

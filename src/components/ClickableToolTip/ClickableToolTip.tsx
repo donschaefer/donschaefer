@@ -2,7 +2,7 @@ import { ClickAwayListener, IconButton, Tooltip, useTheme } from '@mui/material'
 import React from 'react';
 
 export interface IClickableToolTipProps {
-	buttonIcon: JSX.Element;
+	buttonIcon: React.JSX.Element;
 	toolTipText: string;
 }
 const ClickableToolTip = ({ buttonIcon, toolTipText }: IClickableToolTipProps ) => {

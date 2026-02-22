@@ -79,6 +79,10 @@ A personal portfolio site built with React 18, TypeScript, Vite, and Material-UI
 - `npm run build` - Production build to `build/` folder
 - `npm run lint` - ESLint on TypeScript/JSX files
 - `npm run deploy` - GitHub Pages deployment
+- `npm run test:unit` - Runs all unit tests in a single non-interactive pass using Vitest.
+- `npm run test:visual` - Runs visual regression tests using Playwright. On the first run (when no reference screenshots exist), screenshots are captured and saved as baselines — the tests will fail so you can manually review the images. On subsequent runs, new screenshots are compared against the baselines; tests pass if they match and fail if they differ.
+- `npm run test:visual:update` - Regenerates all visual regression baselines by overwriting existing reference screenshots with new ones.
+- `npm run test:all` - Runs unit tests followed by visual regression tests in a single command.
 
 ### Testing
 - **Framework**: Vitest (Jest-compatible) with jsdom environment
