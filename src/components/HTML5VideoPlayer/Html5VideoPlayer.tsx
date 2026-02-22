@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import videojs from "video.js";
 type VideoJsPlayer = ReturnType<typeof videojs>;
 import 'video.js/dist/video-js.css';
 import './html5VideoPlayer.css';
 
-// eslint-disable-next-line no-shadow
 enum VideoType {
 	HTML5 = `HTML5`,
 	YouTube = `YouTube`,
@@ -22,8 +21,8 @@ export interface IHtml5VideoPlayerProps {
 }
 
 const Html5VideoPlayer = ({ title, paths, thumbnail, vttCaptions, height, width }: IHtml5VideoPlayerProps) => {			
-	const videoRef = React.useRef<HTMLVideoElement | null>(null);
-	const playerRef = React.useRef<VideoJsPlayer | null>(null);
+	const videoRef = useRef<HTMLVideoElement | null>(null);
+	const playerRef = useRef<VideoJsPlayer | null>(null);
 	const getVideoType = (): VideoType => {
 		if (paths[0].includes(`youtube.com`)) {
 			return VideoType.YouTube;
@@ -32,9 +31,9 @@ const Html5VideoPlayer = ({ title, paths, thumbnail, vttCaptions, height, width 
 		}
 		return VideoType.HTML5;
 	};
-	const [videoType] = React.useState(getVideoType());
+	const [videoType] = useState(getVideoType());
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (!playerRef.current) {
 			const videoElement = videoRef.current;	  
 			const options = {};
@@ -46,7 +45,7 @@ const Html5VideoPlayer = ({ title, paths, thumbnail, vttCaptions, height, width 
 		}		
 	}, [playerRef]);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const player = playerRef.current;	
 		
 		return () => {

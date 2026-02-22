@@ -1,6 +1,4 @@
-/* eslint-disable no-shadow */
-import React from 'react';
-import { Typography } from "@mui/material";
+import { Typography } from '@mui/material';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import CodeIcon from '@mui/icons-material/Code';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';

@@ -1,5 +1,4 @@
 import { Box, Card, CardContent, Grid, Typography, useTheme } from '@mui/material';
-import React from 'react';
 import HeroContainer from '../HeroContainer/HeroContainer';
 import { useElementDimensions } from '../../hooks/useElementHeight';
 import { ICustomContainerProps } from '../../models/CustomContainer';

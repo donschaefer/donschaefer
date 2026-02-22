@@ -1,7 +1,7 @@
 import { CardContent, Container, Grid, Grow, styled, Typography, useTheme } from '@mui/material';
 import MuiCard from '@mui/material/Card';
 import MuiCardActionArea from '@mui/material/CardActionArea';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CaseStudy, { ICaseStudyProps } from '../components/CaseStudy/CaseStudy';
 import HeroContainer from '../components/HeroContainer/HeroContainer';
 import { useElementDimensions } from '../hooks/useElementHeight';
@@ -131,7 +131,7 @@ const CaseStudies = () => {
 								maxWidth: theme.breakpoints.values.xl
 							}}
 						>
-						<Grid item xs={12} md={6}>
+							<Grid item xs={12} md={6}>
 								<Grow 
 									in={true}
 									style={{ transformOrigin: `0 0 0`}}

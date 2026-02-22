@@ -1,5 +1,4 @@
 import { Typography, useTheme } from '@mui/material';
-import React from 'react';
 import InnerPage from '../components/InnerPageTemplate/InnerPageTemplate';
 
 const Philosophy = () => {

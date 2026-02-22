@@ -1,6 +1,5 @@
-import React from 'react';
-import { INavItem } from "../models/INavItem";
-import { TechStackLabel } from "../models/TechStackLabel";
+import { INavItem } from '../models/INavItem';
+import { TechStackLabel } from '../models/TechStackLabel';
 
 export const techStack: INavItem[] = [
 	{

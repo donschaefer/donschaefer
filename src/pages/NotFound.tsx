@@ -1,4 +1,3 @@
-import React from 'react';
 import { Typography, useTheme } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import HeroContainer from '../components/HeroContainer/HeroContainer';

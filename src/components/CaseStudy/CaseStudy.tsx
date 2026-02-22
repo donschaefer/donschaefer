@@ -1,6 +1,6 @@
+import { type CSSProperties, type JSX, type SyntheticEvent, useState } from 'react';
 import { Accordion, AccordionDetails, AccordionSummary, Container, Link, styled, Typography, useTheme } from '@mui/material';
 import LinkIcon from '@mui/icons-material/Link';
-import React from 'react';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import Tag from '../Tag/Tag';
@@ -21,8 +21,7 @@ export interface ICaseStudyProps {
 	contributions: IHighlight[];
 }
 
-// eslint-disable-next-line quotes
-const CaseStudyContainer = styled('div')(({ theme }) => ({
+const CaseStudyContainer = styled(`div`)(({ theme }) => ({
 	display: `grid`,
 	gridTemplateColumns: `1fr`,
 	gridAutoRows: `minmax(${theme.spacing(3)}, auto)`,
@@ -38,8 +37,7 @@ const CaseStudyContainer = styled('div')(({ theme }) => ({
 	}
 }));
 
-// eslint-disable-next-line quotes
-const CaseStudyHeader = styled('div')(({ theme }) => ({
+const CaseStudyHeader = styled(`div`)(({ theme }) => ({
 	gridColumn: 1,
 	gridRow: 1,
 	[theme.breakpoints.up(`md`)]: {
@@ -51,8 +49,7 @@ const CaseStudyHeader = styled('div')(({ theme }) => ({
 	}
 }));
 
-// eslint-disable-next-line quotes
-const CaseStudyGoal = styled('div')(({ theme }) => ({
+const CaseStudyGoal = styled(`div`)(({ theme }) => ({
 	gridColumn: 1,
 	gridRow: 2,
 	[theme.breakpoints.up(`md`)]: {
@@ -66,8 +63,7 @@ const CaseStudyGoal = styled('div')(({ theme }) => ({
 	}
 }));
 
-// eslint-disable-next-line quotes
-const CaseStudySkills = styled('div')(({ theme }) => ({
+const CaseStudySkills = styled(`div`)(({ theme }) => ({
 	gridColumn: 1,
 	gridRow: 3,
 	[theme.breakpoints.up(`md`)]: {
@@ -83,8 +79,7 @@ const CaseStudySkills = styled('div')(({ theme }) => ({
 	}
 }));
 
-// eslint-disable-next-line quotes
-const CaseStudyContributions = styled('div')(({ theme }) => ({
+const CaseStudyContributions = styled(`div`)(({ theme }) => ({
 	gridColumn: 1,
 	gridRow: 4,
 	[theme.breakpoints.up(`md`)]: {
@@ -100,8 +95,7 @@ const CaseStudyContributions = styled('div')(({ theme }) => ({
 	}
 }));
 
-// eslint-disable-next-line quotes
-const CaseStudySkillsList = styled('ul')(() => ({
+const CaseStudySkillsList = styled(`ul`)(() => ({
 	margin: 0,
 	padding: 0,
 	display: `flex`,
@@ -116,11 +110,11 @@ const CaseStudySkillsList = styled('ul')(() => ({
 
 const CaseStudy = ({ client, agency, agencyUrl, goal, contributions, tags, clientUrl }: ICaseStudyProps) => {
 	const theme = useTheme();
-	const [expandedPanel, setExpandedPanel] = React.useState<string | false>(false);
+	const [expandedPanel, setExpandedPanel] = useState<string | false>(false);
 	
 
-	const companyName = (name: string, url?: string, isClient?: boolean): React.JSX.Element => {
-		const companyStyles: React.CSSProperties = isClient ? {
+	const companyName = (name: string, url?: string, isClient?: boolean): JSX.Element => {
+		const companyStyles: CSSProperties = isClient ? {
 			paddingRight: `.25em`,
 			color: theme.palette.getContrastText(theme.palette.background.default)
 		} : {
@@ -160,7 +154,7 @@ const CaseStudy = ({ client, agency, agencyUrl, goal, contributions, tags, clien
 		);
 	};
 
-	const toggleAccordionPanel = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+	const toggleAccordionPanel = (panel: string) => (_event: SyntheticEvent, isExpanded: boolean) => {
 		setExpandedPanel(isExpanded ? panel : false);
 	};
 
@@ -202,7 +196,7 @@ const CaseStudy = ({ client, agency, agencyUrl, goal, contributions, tags, clien
 								key={contributionKey}
 								expanded={expandedPanel === `${contributionKey}`} 
 								onChange={toggleAccordionPanel(`${contributionKey}`)}
-								slotProps={{ heading: { component: 'div' } }}
+								slotProps={{ heading: { component: `div` } }}
 							>
 								<AccordionSummary
 									expandIcon={<AddCircleOutlineIcon />}

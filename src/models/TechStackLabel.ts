@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-shadow
 export enum TechStackLabel {
 	React = `React`,
 	TypeScript = `TypeScript`,
