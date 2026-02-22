@@ -1,4 +1,3 @@
-import React from 'react';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { darkTheme } from './themes/dark';
 import Layout from './components/Layout/Layout';

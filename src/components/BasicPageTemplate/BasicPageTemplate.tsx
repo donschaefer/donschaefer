@@ -1,4 +1,3 @@
-import React from 'react';
 import { useElementDimensions } from '../../hooks/useElementHeight';
 import { ICustomContainerProps } from '../../models/CustomContainer';
 

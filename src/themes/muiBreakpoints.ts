@@ -1,11 +1,11 @@
-import variables from '../styles/variables.module.scss';
+import { variables } from '../styles/variables';
 
 export const muiBreakPoints = {
 	values: {		
-		xs: Number(variables.xs),
-		sm: Number(variables.sm),
-		md: Number(variables.md),
-		lg: Number(variables.lg),
-		xl: Number(variables.xl)
+		xs: variables.xs,
+		sm: variables.sm,
+		md: variables.md,
+		lg: variables.lg,
+		xl: variables.xl
 	}
 };

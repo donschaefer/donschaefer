@@ -1,6 +1,6 @@
 import { Breakpoints, PaletteMode } from '@mui/material';
-import variables from '../styles/variables.module.scss';
-import { TypographyOptions } from "@mui/material/styles/createTypography";
+import { variables } from '../styles/variables';
+import { TypographyStyleOptions } from "@mui/material/styles/createTypography";
 import { muiBreakPoints } from './muiBreakpoints';
 
 // eslint-disable-next-line quotes
@@ -10,7 +10,7 @@ declare module "@mui/material/Typography" {
 	}
 }
 
-interface ExtendedTypographyOptions extends TypographyOptions {
+interface ExtendedTypographyOptions extends TypographyStyleOptions {
 	logo: React.CSSProperties;
 }
 

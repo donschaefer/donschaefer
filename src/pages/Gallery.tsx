@@ -102,9 +102,10 @@ const Gallery = () => {
 									elevation={0}
 									expanded={expandedPanel === `${key}`} 
 									onChange={toggleAccordionPanel(`${key}`)}
+									slotProps={{ heading: { component: `div` } }}
 									sx={{
 										backgroundColor: pageBackgroundColor,
-										"& > .MuiButtonBase-root": {
+										"& .MuiAccordionSummary-root": {
 											padding: `0 1rem`,
 											backgroundColor: `rgba(33,33,33,1) !important`,
 											borderRadius: `5px`,
@@ -134,8 +135,7 @@ const Gallery = () => {
 										}}
 									>
 										<Typography 
-											variant={`h2`}
-											sx={{
+											variant={`h2`}										component="span"											sx={{
 												padding: `0 0 0 ${theme.spacing(2)}`
 											}}
 										>{type}</Typography>

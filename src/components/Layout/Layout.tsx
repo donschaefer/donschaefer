@@ -20,7 +20,7 @@ export default function Layout({ children }: ICustomContainerProps) {
 	const [topNav] = useState(
 		<Navigation key={`nav`} theme={theme} topNav={true} topNavButtonHeight={headerElementHeight} />
 	);
-	const [headerElements, setHeaderElements] = useState<JSX.Element[]>([topNav]);
+	const [headerElements, setHeaderElements] = useState<React.JSX.Element[]>([topNav]);
 	const [mainLogo] = useState(
 		<Link to={navRoute(NavRouteLabel.Home).path} key={`logo`} style={{ display: `flex`, padding: theme.spacing() }}>
 			<Zoom in={true}>

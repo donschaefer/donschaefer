@@ -1,7 +1,6 @@
 import { Box, Typography, useTheme, Zoom, styled, Grid, CardContent, Grow } from '@mui/material';
 import MuiCard from '@mui/material/Card';
 import MuiCardActionArea from '@mui/material/CardActionArea';
-import React from 'react';
 import HeroContainer from '../components/HeroContainer/HeroContainer';
 import Logo from '../components/Logo/Logo';
 import { useElementDimensions } from '../hooks/useElementHeight';

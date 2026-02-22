@@ -1,12 +1,10 @@
 import { styled } from '@mui/material';
-import React from 'react';
 
 export interface ITagProps {
 	text: string;
 }
 
-// eslint-disable-next-line quotes
-const StyledTag = styled('span')(({ theme }) => ({
+const StyledTag = styled(`span`)(({ theme }) => ({
 	backgroundColor: theme.palette.grey[300],
 	color: theme.palette.background.default,
 	padding: `.25em .35em`,
