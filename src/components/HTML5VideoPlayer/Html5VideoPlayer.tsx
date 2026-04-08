@@ -20,13 +20,22 @@ export interface IHtml5VideoPlayerProps {
 	videoType?: VideoType;
 }
 
+const isHostMatch = (url: string, domain: string): boolean => {
+	try {
+		const { hostname } = new URL(url);
+		return hostname === domain || hostname.endsWith(`.${domain}`);
+	} catch {
+		return false;
+	}
+};
+
 const Html5VideoPlayer = ({ title, paths, thumbnail, vttCaptions, height, width }: IHtml5VideoPlayerProps) => {			
 	const videoRef = useRef<HTMLVideoElement | null>(null);
 	const playerRef = useRef<VideoJsPlayer | null>(null);
 	const getVideoType = (): VideoType => {
-		if (paths[0].includes(`youtube.com`)) {
+		if (isHostMatch(paths[0], `youtube.com`)) {
 			return VideoType.YouTube;
-		} else if (paths[0].includes(`vimeo.com`)) {
+		} else if (isHostMatch(paths[0], `vimeo.com`)) {
 			return VideoType.Vimeo;
 		}
 		return VideoType.HTML5;
