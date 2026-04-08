@@ -260,7 +260,7 @@ const Gallery = () => {
 								</>							
 							</Modal>
 						}
-						{(imageData.filter(iData => iData.url.includes(`vimeo.com`)).length > 0) && 							
+						{(imageData.filter(iData => { try { const h = new URL(iData.url).hostname; return h === `vimeo.com` || h.endsWith(`.vimeo.com`); } catch { return false; } }).length > 0) && 							
 							<script src="https://player.vimeo.com/api/player.js"></script>
 						}
 					</Container>					
