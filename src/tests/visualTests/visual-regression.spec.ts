@@ -27,6 +27,7 @@ const routes: { name: string; path: string }[] = [
 	{ name: `development-case-studies`, path: `/development-case-studies` },
 	{ name: `gallery`, path: `/gallery` },
 	{ name: `philosophy`, path: `/philosophy` },
+	{ name: `not-found`, path: `/404` },
 ];
 
 for (const route of routes) {
